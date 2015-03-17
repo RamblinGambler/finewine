@@ -1,0 +1,2 @@
+# finewine
+just run ```meteor```
