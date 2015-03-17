@@ -1,0 +1,23 @@
+<template name="lotItem">
+    <div class="side-image">
+        <div class="images-wrapper"></div>
+        <div class="side-image-content">
+            <h1>{{wine.name}}</h1>
+						<h1>Lot #{{number}}</h1>
+            <p><strong>{{wine.vintage}}</strong></p>
+            <p><em>{{wine.region}}</em></p>
+						<fieldset class="winning-bid">
+                <label for="winningBid">Winning Bid</label>
+                <span class="currencyInput">€</span><input type="number" name="winningBid" class="currency" min="0" max="9999" step="0.01" size="4" title="CDA Currency Format - no dollar sign and no comma(s) - cents (.##) are optional" value="{{winningBid}}"/>
+						</fieldset>
+            <div class="button-group">
+                <label>
+                    <span class="button-group-item" data-action="left"><i class="icon ion-chevron-left"></i> Previous</span>
+                </label>
+                <label>
+                    <span class="button-group-item" data-action="right">Next <i class="icon ion-chevron-right"></i></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</template>

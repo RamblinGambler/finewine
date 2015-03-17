@@ -1,0 +1,16 @@
+<template name="winesList">
+	  {{> tabular table=TabularTables.Wines}}
+    <div class="button-group">
+        <label>
+            <span class="button-group-item" data-action="left"><i class="icon ion-chevron-left"></i> Previous</span>
+        </label>
+        <label>
+            <span class="button-group-item" data-action="right">Next <i class="icon ion-chevron-right"></i></span>
+        </label>
+    </div>
+				<a href="{{pathFor 'wineSubmit'}}">Submit Wine</a>
+</template>
+
+<template name="winePriceCell">
+		${{price}}
+</template>

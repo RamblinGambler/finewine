@@ -1,0 +1,26 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+autopublish
+insecure
+fourseven:scss
+wolves:bourbon
+wolves:bitters
+wolves:neat
+iron:router
+underscore
+dburles:collection-helpers
+matb33:collection-hooks
+aldeed:tabular
+ccorcos:swipe
+meteoric:ionicons-sass
+fastclick
+harrison:papa-parse
+msavin:mongol
+accounts-ui
+accounts-password
+alanning:roles

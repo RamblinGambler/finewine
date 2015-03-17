@@ -1,0 +1,37 @@
+.lots-list {
+  .name {
+    background-color: hsl(52, 89%, 72%);
+    cursor: pointer;
+    padding: 0;
+
+    div {
+      height: 50px;
+      padding: 14px 0 0 15px;
+
+    }
+  }
+
+  .previous {
+
+  }
+
+  .lotNum {
+    text-align: center;
+  }
+
+  .name:hover {
+    background-color: hsl(52, 93%, 76%);
+  }
+  .sorting_disabled {
+    background-color: #fff;
+    cursor: auto;
+  }
+  .sorting_disabled {
+    background-color: #fff !important;
+  }
+}
+
+
+
+
+
