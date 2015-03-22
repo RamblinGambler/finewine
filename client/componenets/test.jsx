@@ -5,13 +5,16 @@
 
  var MyComponent = ReactMeteor.createClass({
 
-  templateName: "React",
+  templateName: "Homebar",
   startMeteorSubscriptions: function() {
     Meteor.subscribe("lots");
   },
   render: function () {
     return (
-      <div className="shit"> wines </div>
+      <div className="shit">
+       <h1>Short description of Product</h1>
+       <p>A few reasons why this product is worth using, who it's for and why they need it.</p>
+      </div>
     )
   },
     // Make sure your component implements this method.
@@ -21,5 +24,3 @@
     };
   }
 });
-
-// React.renderComponent( MyComponent, document.body);
