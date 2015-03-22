@@ -1,10 +1,10 @@
-Template.lotsList.helpers({
+Template.auctionItem.helpers({
     lots: function() {
         return Lots.find();
     }
 });
 
-Template.lotsList.events({
+Template.auctionItem.events({
     "click [data-action='left']": function(e) {
         var dataTable = $(e.target).closest('.lots-list').find('table').DataTable();
         dataTable.page('previous').draw(false);
