@@ -19,7 +19,9 @@ ccorcos:swipe
 meteoric:ionicons-sass
 fastclick
 harrison:papa-parse
-msavin:mongol
 accounts-password
 alanning:roles
 reactjs:react
+autopublish
+msavin:mongol
+meteorhacks:flow-router

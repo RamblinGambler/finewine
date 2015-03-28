@@ -3,6 +3,7 @@ accounts-password@1.1.0
 alanning:roles@1.2.13
 aldeed:tabular@1.1.0
 aldeed:template-extension@3.4.3
+autopublish@1.0.3
 autoupdate@1.2.0
 babrahams:editable-json@0.3.12
 base64@1.0.3
@@ -48,6 +49,7 @@ logging@1.0.7
 matb33:collection-hooks@0.7.11
 meteor@1.1.5
 meteor-platform@1.2.2
+meteorhacks:flow-router@1.1.1
 meteorhacks:inject-initial@1.0.2
 meteoric:ionicons-sass@0.1.5
 meteortoys:toykit@0.2.2
