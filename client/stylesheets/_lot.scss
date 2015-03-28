@@ -1,4 +1,4 @@
-.side-image {
+.lot {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-line-height: 1.5em !default;
   $base-accent-color: #477DCA !default;
@@ -24,7 +24,7 @@
     @include row(table);
   }
 
-  .images-wrapper {
+  .lot-image {
     @include background(url('https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png'), linear-gradient($side-image-background-top, $side-image-background-bottom), no-repeat $side-image-background-top scroll);
     background-color: $side-image-background-top;
     background-size: cover;
@@ -41,7 +41,7 @@
     }
   }
 
-  .side-image-content {
+  .lot-content {
     @include span-columns(12);
     padding: 1em 1em 4em 1em;
 
