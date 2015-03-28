@@ -3,7 +3,7 @@
  * @jsx React.DOM
  */
 
-var GridItemList = ReactMeteor.createClass({
+window.GridItemList = ReactMeteor.createClass({
   templateName: "GridItemList",
   render: function () {
     return (
@@ -20,4 +20,3 @@ var GridItemList = ReactMeteor.createClass({
   }
 
 });
-

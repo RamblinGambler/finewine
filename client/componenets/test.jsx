@@ -13,7 +13,7 @@
     return (
       <div className="shit">
        <h1>Short description of Product</h1>
-       <p>A few reasons why this product is worth using, who it's for and why they need it.</p>
+       <p>A few reasons why this product is worth using, who it is for and why they need it.</p>
       </div>
     )
   },
