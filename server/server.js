@@ -9,7 +9,7 @@ Meteor.startup(function() {
                username: userData.name
            });
            //Meteor.users.update({_id: userId}, {$set:{'emails.0.verified': true}});
-           Roles.addUsersToRoles(userId, userData.roles);
+           // Roles.addUsersToRoles(userId, userData.roles);
        })
    }
 });

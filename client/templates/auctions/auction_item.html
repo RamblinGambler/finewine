@@ -1,15 +1,15 @@
 <template name="auctionItem">
-		<div class="lots-list">
+	<div class="lots-list">
   			{{> tabular table=TabularTables.Lots}}
         <a href="{{pathFor 'auctionSubmit'}}">Submit Wine</a>
         <div class="button-group">
             <label>
                 <span class="button-group-item" data-action="left"><i class="icon ion-chevron-left"></i> Previous</span>
-						</label>
+			</label>
             <label>
                 <span class="button-group-item" data-action="right">Next <i class="icon ion-chevron-right"></i></span>
-						</label>
-				</div>
+			</label>
+    	</div>
     </div>
 </template>
 
