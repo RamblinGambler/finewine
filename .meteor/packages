@@ -10,7 +10,6 @@ fourseven:scss
 wolves:bourbon
 wolves:bitters
 wolves:neat
-iron:router
 underscore
 dburles:collection-helpers
 matb33:collection-hooks

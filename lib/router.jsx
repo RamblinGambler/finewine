@@ -34,12 +34,12 @@
 //     }
 // });
 
-FlowRouter.route('/wine/:wineId', {
+FlowRouter.route('/lot/:lotId', {
     subscriptions: function(params) {
-        console.log("subscribe and register this subscription as 'myPost'");
-        this.register('wine', Meteor.subscribe('blogPost', params.postId));
+
     },
     action: function(params) {
-        console.log("Yeah! We are on the post:", params.postId);
+
+        React.render(<LotController imgURL='wine_glass.jpg' wineName='yellow tail' vintage='1901' region='adelaide' number='1'/>, document.body)
     }
 });

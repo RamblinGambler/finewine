@@ -1,5 +1,3 @@
-
-
 Session.set("Mongol", {
     'collections': ['wines', 'lots'],
     'display': true,
