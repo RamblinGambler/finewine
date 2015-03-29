@@ -1,19 +1,33 @@
 
 window.LotController = ReactMeteor.createClass({
-  templateName: "LotController",
+  startMeteorSubscriptions: function() {
+    // Meteor.subscribe("lots");
+  },
 
   getMeteorState: function() {
-    return {
-      wine: Wines.find().count()
-    };
+    if (FlowRouter.subsReady()) {
+      console.log(Lots.find().fetch()[1]);
+      return {
+        wine: Lots.find().fetch()[1].number
+      }
+    }
+    else {
+      return {
+        wineName: 'nope'
+      }
+    }
+
+
+  },
+
+  componentWillMount: function() {
   },
 
   render: function () {
-    console.log(this)
     return (
       <Lot
         imgURL={this.props.imgURL}
-        wineName={this.state.wine}
+        wineName={this.state.wineName}
         vintage={this.props.vintage}
         region={this.props.region}
         number={this.props.number}

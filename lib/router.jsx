@@ -36,10 +36,10 @@
 
 FlowRouter.route('/lot/:lotId', {
     subscriptions: function(params) {
-
+        this.register('lots', Meteor.subscribe('lots'));
     },
     action: function(params) {
 
-        React.render(<LotController imgURL='wine_glass.jpg' wineName='yellow tail' vintage='1901' region='adelaide' number='1'/>, document.body)
+        React.render(<LotController />, document.body)
     }
 });
