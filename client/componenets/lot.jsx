@@ -19,30 +19,17 @@ window.Lot = React.createClass({
           <fieldset className="winning-bid">
             <label htmlFor="winningBid">Winning Bid</label>
             <span className="currencyInput">€</span>
-            <input 
-              type="number" 
-              name="winningBid" 
-              className="currency" 
-              min="0" max="9999" 
-              step="1" size="4" 
-              title="CDA Currency Format - no euro sign and no comma(s) - cents (.##) are optional" 
+            <input
+              type="number"
+              name="winningBid"
+              className="currency"
+              min="0" max="9999"
+              step="1" size="4"
+              title="CDA Currency Format - no euro sign and no comma(s) - cents (.##) are optional"
               onChange={this.bidChanged}
               />
           </fieldset>
-          <div className="button-group">
-            <label>
-              <span className="button-group-item" data-action="left">
-              <i className="icon ion-chevron-left"></i>
-              Previous
-              </span>
-            </label>
-            <label>
-              <span className="button-group-item" data-action="right">
-              Next
-              <i className="icon ion-chevron-right"></i>
-              </span>
-            </label>
-          </div>
+          <Paging/>
         </div>
       </section>
     )

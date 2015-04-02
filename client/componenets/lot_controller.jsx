@@ -16,8 +16,6 @@ window.LotController = ReactMeteor.createClass({
         wineName: 'nope'
       }
     }
-
-
   },
 
   componentWillMount: function() {
