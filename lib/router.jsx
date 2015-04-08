@@ -34,12 +34,22 @@
 //     }
 // });
 
-FlowRouter.route('/lot/:lotId', {
+FlowRouter.route('/', {
     subscriptions: function(params) {
         this.register('lots', Meteor.subscribe('lots'));
     },
     action: function(params) {
 
         React.render(<LotController />, document.body)
+    }
+});
+
+FlowRouter.route('/lots', {
+    subscriptions: function(params) {
+        this.register('lots', Meteor.subscribe('lots'));
+    },
+    action: function(params) {
+
+        React.render(<LotListController />, document.body)
     }
 });
