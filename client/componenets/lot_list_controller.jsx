@@ -10,7 +10,11 @@ window.LotListController = ReactMeteor.createClass({
     if (FlowRouter.subsReady()) {
       console.log(Lots.find().fetch()[1]);
       return {
-        wines: Lots.find().fetch(),
+        wines: Lots.find().fetch().map(function(obj) {
+          delete obj._id
+          obj.name = 'Merlot';
+          return obj
+        }),
       }
     } else {
       return {
