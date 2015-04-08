@@ -10,7 +10,7 @@ window.LotListController = ReactMeteor.createClass({
     if (FlowRouter.subsReady()) {
       console.log(Lots.find().fetch()[1]);
       return {
-        wine: Lots.find().fetch()[1].number
+        wines: Lots.find().fetch(),
       }
     } else {
       return {
@@ -25,11 +25,7 @@ window.LotListController = ReactMeteor.createClass({
 
   render: function () {
     return (
-      <Table className="table" data={[
-          { Name: 'Griffin Smith', Age: 18 },
-          { Age: 23,  Name: 'Lee Salminen' },
-          { Age: 28, Position: 'Developer' },
-        ]}
+      <Table className="table" data={this.state.wines}
       />
     )
   }
