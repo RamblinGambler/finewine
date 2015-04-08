@@ -1,0 +1,11 @@
+{
+  "name": "fine-wine",
+  "version": "0.0.1",
+  "dependencies": {
+    "reactable": "~0.10.1"
+  },
+  "ignoredDependencies": [
+    "react"
+  ],
+  "private": true
+}
