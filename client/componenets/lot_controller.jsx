@@ -10,8 +10,7 @@ window.LotController = ReactMeteor.createClass({
       return {
         wine: Lots.find().fetch()[1].number
       }
-    }
-    else {
+    } else {
       return {
         wineName: 'nope'
       }
@@ -25,10 +24,10 @@ window.LotController = ReactMeteor.createClass({
     return (
       <Lot
         imgURL={this.props.imgURL}
-        wineName={this.state.wineName}
+        wineName={this.state.wine}
         vintage={this.props.vintage}
         region={this.props.region}
-        number={this.props.number}
+        number={this.props.wine}
       />
     )
   }
