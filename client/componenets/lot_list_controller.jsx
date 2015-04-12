@@ -10,7 +10,7 @@ LotListController = ReactMeteor.createClass({
     if (FlowRouter.subsReady()) {
       console.log(Lots.find().fetch()[1]);
       return {
-        wines: Lots.find().fetch().map(function(obj) {
+        lots: Lots.find().fetch().map(function(obj) {
           delete obj._id
           obj.name = 'Merlot';
           return obj
@@ -29,7 +29,7 @@ LotListController = ReactMeteor.createClass({
 
   render: function () {
     return (
-      <Table className="table" data={this.state.wines}
+      <Table className="table" data={this.state.lots}
       />
     )
   }
