@@ -29,7 +29,7 @@ window.Lot = React.createClass({
               onChange={this.bidChanged}
               />
           </fieldset>
-          <Paging/>
+          <Paging nextLot={this.props.nextLot}/>
         </div>
       </section>
     )

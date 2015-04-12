@@ -34,13 +34,30 @@
 //     }
 // });
 
-FlowRouter.route('/lot/:lotId', {
+FlowRouter.route('/', {
     subscriptions: function(params) {
-        this.register('lot', Meteor.subscribe('lots', params.lotId));
-        // this.register('wine', Meteor.subscribe('wines'));
     },
     action: function(params) {
 
-        React.render(<LotController lot/>, document.body)
+        React.render(<Home/>, document.body)
+    }
+});
+
+FlowRouter.route('/lot/:lotId', {
+    subscriptions: function(params) {
+        this.register('lot', Meteor.subscribe('lots', params.lotId));
+    },
+    action: function(params) {
+        React.render(<LotController />, document.body)
+    }
+});
+
+FlowRouter.route('/lots', {
+    subscriptions: function(params) {
+        this.register('lots', Meteor.subscribe('lots'));
+    },
+    action: function(params) {
+
+        React.render(<LotListController />, document.body)
     }
 });

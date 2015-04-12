@@ -1,4 +1,4 @@
-window.Home = React.createClass({
+Home = React.createClass({
 
 	render: function() {
 		return (

@@ -24,3 +24,7 @@ reactjs:react
 autopublish
 msavin:mongol
 meteorhacks:flow-router
+meteorhacks:npm
+
+
+npm-container
