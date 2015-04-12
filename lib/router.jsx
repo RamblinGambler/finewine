@@ -36,10 +36,11 @@
 
 FlowRouter.route('/lot/:lotId', {
     subscriptions: function(params) {
-        this.register('lots', Meteor.subscribe('lots'));
+        this.register('lot', Meteor.subscribe('lots', params.lotId));
+        // this.register('wine', Meteor.subscribe('wines'));
     },
     action: function(params) {
 
-        React.render(<LotController />, document.body)
+        React.render(<LotController lot/>, document.body)
     }
 });

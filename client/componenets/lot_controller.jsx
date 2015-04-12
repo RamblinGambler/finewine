@@ -1,18 +1,23 @@
 
 window.LotController = ReactMeteor.createClass({
   startMeteorSubscriptions: function() {
-    // Meteor.subscribe("lots");
+    Meteor.subscribe("wines");
   },
 
   getMeteorState: function() {
+
+    // var current = FlowRouter.current();
+    // console.log(Lots.find({_id: FlowRouter.getParam('lotId')}).fetch()[0]);
     if (FlowRouter.subsReady()) {
-      console.log(Lots.find().fetch()[1]);
+      var lot = Lots.find({_id: FlowRouter.getParam('lotId')}).fetch()[0];
+      // console.log("qfewcljsn",lot.wine());
       return {
-        wine: Lots.find().fetch()[1].number
+        lot: lot,
+        wine: lot.wine()
       }
     } else {
       return {
-        wineName: 'nope'
+        lot: 'nope'
       }
     }
   },
@@ -21,13 +26,17 @@ window.LotController = ReactMeteor.createClass({
   },
 
   render: function () {
+    var wine = {};
+    if (FlowRouter.subsReady()) {
+      var wine = this.state.wine
+    }
     return (
       <Lot
-        imgURL={this.props.imgURL}
-        wineName={this.state.wine}
-        vintage={this.props.vintage}
-        region={this.props.region}
-        number={this.props.wine}
+        imgURL={wine}
+        wineName={wine.name}
+        vintage={wine.vintage}
+        region={wine.region}
+        number={this.state.lot.number}
       />
     )
   }
