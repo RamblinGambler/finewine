@@ -1,0 +1,10 @@
+// for css classes that dont belong to a component
+
+
+.reactable-page-button {
+  padding: 0.5em;
+  cursor: pointer;
+  &:hover {
+    font-weight: bold;
+  }
+}
