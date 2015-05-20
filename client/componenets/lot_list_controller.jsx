@@ -10,14 +10,14 @@ LotListController = ReactMeteor.createClass({
     if (FlowRouter.subsReady()) {
       return {
         lots: Lots.find().fetch().map(function(lot) {
-          var link = '/lot/' + lot._id;
+          var path = '/lot/' + lot._id;
           var wine = Wines.findOne(lot.wineId) || {};
           return {
-            wine: <Link link={link} content={wine.name}/>,
-            vintage: <Link link={link} content={wine.vintage}/>,
-            region: <Link link={link} content={wine.region}/>,
-            number: <Link link={link} content={lot.number}/>,
-            winningBid: <Link link={link} content={lot.winningBid}/>
+            wine: <Link link={path} content={wine.name}/>,
+          vintage: <Link link={path} content={wine.vintage}/>,
+        region: <Link link={path} content={wine.region}/>,
+      number: <Link link={path} content={lot.number}/>,
+    winningBid: <Link link={path} content={lot.winningBid}/>
           }
         }),
       }
@@ -34,11 +34,14 @@ LotListController = ReactMeteor.createClass({
 
   render: function () {
     return (
-      <Table className="table lot-table" data={this.state.lots}
-        itemsPerPage={4}
-        filterable={['wine', 'number']}
-        defaultSort={{column: 'number', direction: 'asc'}}
-      />
+      <div>
+        <Navigator/>
+        <Table className="table lot-table" data={this.state.lots}
+          itemsPerPage={10}
+          filterable={['wine', 'number']}
+          defaultSort={{column: 'number', direction: 'asc'}}
+        />
+      </div>
     )
   }
 });

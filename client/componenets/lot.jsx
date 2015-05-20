@@ -7,6 +7,8 @@ window.Lot = React.createClass({
   },
   render: function () {
     return (
+      <div>
+      <Navigator/>
       <section className="lot">
         <div className="lot-image">
           <img src={this.props.imgURL} />
@@ -32,6 +34,7 @@ window.Lot = React.createClass({
           <Paging nextLot={this.props.nextLot}/>
         </div>
       </section>
+    </div>
     )
   }
 })
