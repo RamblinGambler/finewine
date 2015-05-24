@@ -1,3 +1,9 @@
+FlowRouter.notfound = {
+    action: function(params) {
+        React.render(<NotFound />, document.body)
+    }
+};
+
 FlowRouter.route('/', {
     subscriptions: function(params) {
     },

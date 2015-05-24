@@ -13,6 +13,7 @@ Home = React.createClass({
 				        <button>Learn More</button>
 				    </div>
 				</div>
+				<Footer/>
 			</Default>
 		);
 	}

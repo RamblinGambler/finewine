@@ -41,6 +41,7 @@ LotListController = ReactMeteor.createClass({
           filterable={['wine', 'number']}
           defaultSort={{column: 'number', direction: 'asc'}}
         />
+      <Footer/>
       </div>
     )
   }

@@ -34,6 +34,7 @@ window.Lot = React.createClass({
           <Paging nextLot={this.props.nextLot}/>
         </div>
       </section>
+      <Footer/>
     </div>
     )
   }
