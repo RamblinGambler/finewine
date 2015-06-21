@@ -33,7 +33,7 @@ FlowRouter.route('/lot/:lotId', {
 
 FlowRouter.route('/auction/:name', {
     subscriptions: function(params) {
-        this.register('auctions', Meteor.subscribe('auctions'));
+        this.register('auctions', Meteor.subscribe('auctions', {name: params.name}));
     },
     action: function(params) {
         React.render(<LotListController auction={params.name}/>, document.body)

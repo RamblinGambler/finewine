@@ -1,4 +1,3 @@
-
 var Table = Reactable.Table;
 
 LotListController = ReactMeteor.createClass({
@@ -10,7 +9,6 @@ LotListController = ReactMeteor.createClass({
   getMeteorState: function() {
     if (FlowRouter.subsReady()) {
       var auction = Auctions.findOne({name: this.props.auction});
-      console.log(auction);
       return {
         lots: auction.lots().fetch().map(function(lot) {
           var path = Paths.lots(lot.number)
