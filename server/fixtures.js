@@ -1,3 +1,5 @@
+Wines.remove({});
+Auctions.remove({});
 if (Wines.find().count() === 0) {
    var wine1 = Wines.insert({
        name: "Pretty good shit",
@@ -6,18 +8,18 @@ if (Wines.find().count() === 0) {
    });
    var auction1 = Auctions.insert({
      number: 1,
-     name: 'Bar-le-Duc'
+     name: 'Paris'
    });
    var auction2 = Auctions.insert({
      number: 2,
-     name: 'Bar-le-Duc'
+     name: 'Nice'
    });
    var auction3 = Auctions.insert({
      number: 3,
      name: 'Bar-le-Duc'
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 0,
        wineId: wine1,
        winningBid: 0
@@ -28,7 +30,7 @@ if (Wines.find().count() === 0) {
        region: "Uranus!"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 1,
        wineId: wine2,
        winningBid: 0
@@ -39,7 +41,7 @@ if (Wines.find().count() === 0) {
        region: "Buffalo"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 2,
        wineId: wine3,
        winningBid: 0
@@ -50,7 +52,7 @@ if (Wines.find().count() === 0) {
        region: "Gods asshole"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 3,
        wineId: wine4,
        winningBid: 0
@@ -61,13 +63,13 @@ if (Wines.find().count() === 0) {
        region: "France"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 4,
        wineId: wine5,
        winningBid: 0
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 5,
        wineId: wine5,
        winningBid: 0
@@ -78,7 +80,7 @@ if (Wines.find().count() === 0) {
        region: "Up your ass!"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 0,
        wineId: wine1,
        winningBid: 0
@@ -89,7 +91,7 @@ if (Wines.find().count() === 0) {
        region: "Uranus!"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 1,
        wineId: wine2,
        winningBid: 0
@@ -100,7 +102,7 @@ if (Wines.find().count() === 0) {
        region: "Buffalo"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 2,
        wineId: wine3,
        winningBid: 0
@@ -111,7 +113,7 @@ if (Wines.find().count() === 0) {
        region: "Gods asshole"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 3,
        wineId: wine4,
        winningBid: 0
@@ -122,13 +124,13 @@ if (Wines.find().count() === 0) {
        region: "France"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 4,
        wineId: wine5,
        winningBid: 0
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 5,
        wineId: wine5,
        winningBid: 0
@@ -139,7 +141,7 @@ if (Wines.find().count() === 0) {
        region: "Up your ass!"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 0,
        wineId: wine1,
        winningBid: 0
@@ -150,7 +152,7 @@ if (Wines.find().count() === 0) {
        region: "Uranus!"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 1,
        wineId: wine2,
        winningBid: 0
@@ -161,7 +163,7 @@ if (Wines.find().count() === 0) {
        region: "Buffalo"
    });
    Lots.insert({
-       auctionId: auction1,
+       auctionId: auction3,
        number: 2,
        wineId: wine3,
        winningBid: 0

@@ -4,48 +4,37 @@ LotController = ReactMeteor.createClass({
   },
 
   getMeteorState: function() {
-
-    // var current = FlowRouter.current();
-    // console.log(Lots.find({_id: FlowRouter.getParam('lotId')}).fetch()[0]);
     if (FlowRouter.subsReady()) {
-      var lot = Lots.findOne({_id: FlowRouter.getParam('lotId')});
-      var lots = Lots.find().fetch()
-      var prevLot = Lots.findOne({number: lot.number -1 });
-      var total = 1
-      if (lot.number == total) {
-        var nextLot = Lots.findOne({number: lot.number +1 });
-      }
-
+      //TOTO find by auction
+      var lot = Lots.findOne({number: parseInt(FlowRouter.getParam('number'))});
       return {
         lot: lot,
         wine: lot.wine(),
-        nextLot: nextLot,
-        nextLot: prevLot
+        total: Lots.find().count() //TOTO find by auction
       }
+
     } else {
       return {
-        lot: 'nope'
+        lot: { number: 0 },
+        wine: { name: '', vintage: '', region: '' },
+        total: 1,
       }
     }
   },
 
-  componentWillMount: function() {
+  shouldComponentUpdate: function(nextProps, nextState) {
+    // TODO when using auctions may need that too
+    return (!!nextState.lot.number) && this.state.lot.number !== nextState.lot.number
   },
-
   render: function () {
-    var wine = {};
-    // if (FlowRouter.subsReady()) {
-    //   var wine = this.state.wine
-    // }
-    var boundClick =this.next
     return (
       <Lot
-        nextLot={this.state.nextLot}
         imgURL={this.state.wine}
         wineName={this.state.wine.name}
         vintage={this.state.wine.vintage}
         region={this.state.wine.region}
         number={this.state.lot.number}
+        total={this.state.total}
       />
     )
   }

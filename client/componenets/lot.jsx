@@ -5,6 +5,20 @@ window.Lot = React.createClass({
   bidChanged: function (event) {
     Meteor.call('submitWinningBid', [event.target.value, this._id], function(err, data) {});
   },
+  previous: function () {
+    if (this.props.number > 1 ) {
+      return Paths.lots(this.props.number - 1)
+    } else {
+      return null
+    }
+  },
+  next: function () {
+    if (this.props.number < this.props.total) {
+      return Paths.lots(this.props.number + 1)
+    } else {
+      return null
+    }
+  },
   render: function () {
     return (
       <div>
@@ -31,7 +45,10 @@ window.Lot = React.createClass({
               onChange={this.bidChanged}
               />
           </fieldset>
-          <Paging nextLot={this.props.nextLot}/>
+          <Paging
+            prevPath={this.previous()}
+            nextPath={this.next()}
+            />
         </div>
       </section>
       <Footer/>

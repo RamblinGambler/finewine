@@ -4,20 +4,23 @@ var Table = Reactable.Table;
 LotListController = ReactMeteor.createClass({
   startMeteorSubscriptions: function() {
     Meteor.subscribe("lots");
+    Meteor.subscribe("auctions");
   },
 
   getMeteorState: function() {
     if (FlowRouter.subsReady()) {
+      var auction = Auctions.findOne({name: this.props.auction});
+      console.log(auction);
       return {
-        lots: Lots.find().fetch().map(function(lot) {
-          var path = '/lot/' + lot._id;
+        lots: auction.lots().fetch().map(function(lot) {
+          var path = Paths.lots(lot.number)
           var wine = Wines.findOne(lot.wineId) || {};
           return {
             wine: <Link link={path} content={wine.name}/>,
-          vintage: <Link link={path} content={wine.vintage}/>,
-        region: <Link link={path} content={wine.region}/>,
-      number: <Link link={path} content={lot.number}/>,
-    winningBid: <Link link={path} content={lot.winningBid}/>
+            vintage: <Link link={path} content={wine.vintage}/>,
+            region: <Link link={path} content={wine.region}/>,
+            number: <Link link={path} content={lot.number}/>,
+            winningBid: <Link link={path} content={lot.winningBid}/>
           }
         }),
       }
