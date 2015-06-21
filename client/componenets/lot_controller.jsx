@@ -5,17 +5,20 @@ LotController = ReactMeteor.createClass({
 
   getMeteorState: function() {
     if (FlowRouter.subsReady()) {
-      //TOTO find by auction
-      var lot = Lots.findOne({number: parseInt(FlowRouter.getParam('number'))});
+      var lot = Lots.findOne({
+        number: parseInt(FlowRouter.getParam('number')),
+        auctionName: FlowRouter.getParam('name')
+        });
+
       return {
         lot: lot,
         wine: lot.wine(),
-        total: Lots.find().count() //TOTO find by auction
+        total: Lots.find({auctionName: FlowRouter.getParam('name') }).count()
       }
 
     } else {
       return {
-        lot: { number: 0 },
+        lot: { number: 0, auctionName: '' },
         wine: { name: '', vintage: '', region: '' },
         total: 1,
       }
@@ -34,6 +37,7 @@ LotController = ReactMeteor.createClass({
         vintage={this.state.wine.vintage}
         region={this.state.wine.region}
         number={this.state.lot.number}
+        lot= {this.state.lot}
         total={this.state.total}
       />
     )

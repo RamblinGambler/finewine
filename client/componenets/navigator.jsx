@@ -12,8 +12,8 @@ Navigator = React.createClass({
               <a href="/" className="navigation-menu-button" id="js-mobile-menu">MENU</a>
               <nav role="navigation">
                   <ul id="js-navigation-menu" className="navigation-menu show">
-                      <li className={this.classesFor('/lots') }><Link link={'/lots'} content={'Lots'}/></li>
-                      <li className={this.classesFor('/auctions')}><Link link={'/auctions'} content={'Auctions'}/></li>
+                      <li className={this.classesFor('/auctions/anjou')}><Link link={'/auctions'} content={'Auctions/Anjou'}/></li>
+											<li className={this.classesFor('/auction/paris')}><Link link={'/auction/paris'} content={'Auctions/Paris'}/></li>
                   </ul>
               </nav>
           </div>

@@ -8,10 +8,10 @@ LotListController = ReactMeteor.createClass({
 
   getMeteorState: function() {
     if (FlowRouter.subsReady()) {
-      var auction = Auctions.findOne({name: this.props.auction});
+      var name = FlowRouter.getParam('name')
       return {
-        lots: auction.lots().fetch().map(function(lot) {
-          var path = Paths.lots(lot.number)
+        lots: Lots.find({auctionName: name }).fetch().map(function(lot) {
+          var path = Paths.lots(lot)
           var wine = Wines.findOne(lot.wineId) || {};
           return {
             wine: <Link link={path} content={wine.name}/>,

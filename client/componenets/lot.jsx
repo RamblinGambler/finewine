@@ -7,14 +7,14 @@ window.Lot = React.createClass({
   },
   previous: function () {
     if (this.props.number > 1 ) {
-      return Paths.lots(this.props.number - 1)
+      return Paths.lots(this.props.lot, this.props.number - 1)
     } else {
       return null
     }
   },
   next: function () {
     if (this.props.number < this.props.total) {
-      return Paths.lots(this.props.number + 1)
+      return Paths.lots(this.props.lot, this.props.number + 1)
     } else {
       return null
     }
