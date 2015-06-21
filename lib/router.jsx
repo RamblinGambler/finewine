@@ -13,6 +13,15 @@ FlowRouter.route('/', {
     }
 });
 
+FlowRouter.route('/lot/:number', {
+    subscriptions: function(params) {
+        this.register('lot', Meteor.subscribe('lots', {number: params.number}));
+    },
+    action: function(params) {
+        React.render(<LotController />, document.body)
+    }
+});
+
 FlowRouter.route('/lot/:lotId', {
     subscriptions: function(params) {
         this.register('lot', Meteor.subscribe('lots', params.lotId));
