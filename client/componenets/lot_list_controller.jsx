@@ -23,15 +23,10 @@ LotListController = ReactMeteor.createClass({
       }
     } else {
       return {
-        wineName: 'nope'
+        lots: []
       }
     }
   },
-
-  componentWillMount: function() {
-
-  },
-
   render: function () {
     return (
       <div>

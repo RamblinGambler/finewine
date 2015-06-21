@@ -1,5 +1,7 @@
 Navigator = React.createClass({
-
+	classesFor: function(link) {
+		return window.location.pathname === link ? 'active-nav-item nav-link' : 'nav-link';
+	},
 	render: function() {
 		return (
       <header className="navigation" role="banner">
@@ -10,8 +12,8 @@ Navigator = React.createClass({
               <a href="/" className="navigation-menu-button" id="js-mobile-menu">MENU</a>
               <nav role="navigation">
                   <ul id="js-navigation-menu" className="navigation-menu show">
-                      <li className="nav-link"><Link link={'/lots'} content={'Lots'}/></li>
-                      <li className="nav-link"><Link link={'/auctions'} content={'Auctions'}/></li>
+                      <li className={this.classesFor('/lots') }><Link link={'/lots'} content={'Lots'}/></li>
+                      <li className={this.classesFor('/auctions')}><Link link={'/auctions'} content={'Auctions'}/></li>
                   </ul>
               </nav>
           </div>
