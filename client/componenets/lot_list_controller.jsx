@@ -3,7 +3,7 @@ var Table = Reactable.Table;
 
 LotListController = ReactMeteor.createClass({
   startMeteorSubscriptions: function() {
-    // Meteor.subscribe("lots");
+    Meteor.subscribe("lots");
   },
 
   getMeteorState: function() {
