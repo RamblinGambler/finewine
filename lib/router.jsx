@@ -31,12 +31,20 @@ FlowRouter.route('/lot/:lotId', {
     }
 });
 
-FlowRouter.route('/lots', {
+FlowRouter.route('/auction/:name', {
     subscriptions: function(params) {
-        this.register('lots', Meteor.subscribe('lots'));
+        this.register('auctions', Meteor.subscribe('auctions', {name: params.name}));
     },
     action: function(params) {
+        React.render(<LotListController auction={params.name}/>, document.body)
+    }
+});
 
-        React.render(<LotListController />, document.body)
+FlowRouter.route('/auctions', {
+    subscriptions: function(params) {
+        this.register('auctions', Meteor.subscribe('auctions'));
+    },
+    action: function(params) {
+        React.render(<AuctionListController />, document.body)
     }
 });
