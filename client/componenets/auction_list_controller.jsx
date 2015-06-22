@@ -4,7 +4,6 @@ AuctionListController = ReactMeteor.createClass({
   startMeteorSubscriptions: function() {
     Meteor.subscribe("lots");
   },
-
   getMeteorState: function() {
     if (FlowRouter.subsReady()) {
       var auctions = _.uniq(Lots.find().fetch().map(function(lot) {
@@ -23,8 +22,8 @@ AuctionListController = ReactMeteor.createClass({
     }
   },
 
-  componentWillMount: function() {
-
+  shouldComponentUpdate: function(nextProps, nextState) {
+    return !!nextState.auctions.length;
   },
 
   render: function () {

@@ -27,6 +27,9 @@ LotListController = ReactMeteor.createClass({
       }
     }
   },
+  shouldComponentUpdate: function(nextProps, nextState) {
+    return nextState.lots.length;
+  },
   render: function () {
     return (
       <div>
