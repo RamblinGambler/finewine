@@ -5,6 +5,7 @@ FlowRouter.notfound = {
 };
 
 FlowRouter.route('/', {
+    name: 'route',
     subscriptions: function(params) {
     },
     action: function(params) {
@@ -14,6 +15,7 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/auction/:name/lot/:number', {
+    name: 'lotShow',
     subscriptions: function(params) {
         this.register('lot', Meteor.subscribe('lots', {auctionName: params.name, number: params.number}));
     },
@@ -23,6 +25,7 @@ FlowRouter.route('/auction/:name/lot/:number', {
 });
 
 FlowRouter.route('/auction/:name', {
+    name: 'auctionShow',
     subscriptions: function(params) {
         this.register('lots', Meteor.subscribe('lots', {auctionName: params.name}));
     },
@@ -32,6 +35,7 @@ FlowRouter.route('/auction/:name', {
 });
 
 FlowRouter.route('/auctions', {
+    name: 'auctionIndex',
     subscriptions: function(params) {
         this.register('auctions', Meteor.subscribe('auctions'));
     },
