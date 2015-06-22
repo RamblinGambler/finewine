@@ -2,18 +2,23 @@ var Table = Reactable.Table;
 
 AuctionListController = ReactMeteor.createClass({
   startMeteorSubscriptions: function() {
-    Meteor.subscribe("auctions");
+    Meteor.subscribe("lots");
   },
 
   getMeteorState: function() {
     if (FlowRouter.subsReady()) {
+      var auctions = _.uniq(Lots.find().fetch().map(function(lot) {
+          return lot.auctionName;
+        }))
       return {
-        auctions: Auctions.find().fetch(),
-        lot: <Link link={path} content={wine.name}/>,
-      }
+        auctions: auctions.map(function(name) {
+            return { auction: <Link link={Paths.auction(name)} content={ name }/> }
+            }
+          )
+        }
     } else {
       return {
-        auctions: 'nope'
+        auctions: []
       }
     }
   },
@@ -25,7 +30,7 @@ AuctionListController = ReactMeteor.createClass({
   render: function () {
     return (
       <div>
-        <Navigator/>
+        <Navigator location={window.location.pathname}/>
         <Table className="table lot-table" data={this.state.auctions}
           itemsPerPage={10}
         />

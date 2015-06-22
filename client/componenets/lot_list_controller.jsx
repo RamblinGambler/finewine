@@ -3,7 +3,6 @@ var Table = Reactable.Table;
 LotListController = ReactMeteor.createClass({
   startMeteorSubscriptions: function() {
     Meteor.subscribe("lots");
-    Meteor.subscribe("auctions");
   },
 
   getMeteorState: function() {
@@ -31,7 +30,7 @@ LotListController = ReactMeteor.createClass({
   render: function () {
     return (
       <div>
-        <Navigator/>
+        <Navigator location={window.location.pathname}/>
         <Table className="table lot-table" data={this.state.lots}
           itemsPerPage={10}
           filterable={['wine', 'number']}

@@ -22,7 +22,7 @@ window.Lot = React.createClass({
   render: function () {
     return (
       <div>
-      <Navigator/>
+      <Navigator location={window.location.pathname}/>
       <section className="lot">
         <div className="lot-image">
           <img src={this.props.imgURL} />
